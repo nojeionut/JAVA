@@ -5,19 +5,35 @@ import java.util.function.Consumer;
 
 public class tests
 {
-    public static void main(String[] args) {
+    /**
+ * This is the main method which serves as the entry point for the program.
+ *
+ * @param args Unused.
+ */
+public static void main(String[] args) {
 
-        List<String> names = List.of("John", "Maria", "Aisha", "Alex");
-        showNumber.accept(21);
+    // Create a list of names
+    List<String> names = List.of("John", "Maria", "Aisha", "Alex");
 
-        printNames.accept(names);
+    // Use the showNumber Consumer to print a number
+    showNumber.accept(21);
 
-    }
-    // Consumer Functional Interface with and then
-    static Consumer<Integer> showNumber  = number -> System.out.println("the number is: " + number);
+    // Use the printNames Consumer to print each name in the list
+    printNames.accept(names);
 
-    // Consumer Functional Interface print names in the list and write hello before each name
-    static Consumer<List<String>> printNames = names -> {
-        names.forEach(name -> System.out.println("Hello " + name));
-    };
+}
+
+/**
+ * This is a Consumer functional interface that takes an Integer as input.
+ * It prints out the number with a preceding message.
+ */
+static Consumer<Integer> showNumber  = number -> System.out.println("the number is: " + number);
+
+/**
+ * This is a Consumer functional interface that takes a List of Strings as input.
+ * It iterates over the list and prints out each name with a preceding greeting.
+ */
+static Consumer<List<String>> printNames = names -> {
+    names.forEach(name -> System.out.println("Hello " + name));
+};
     }
