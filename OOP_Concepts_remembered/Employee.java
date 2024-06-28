@@ -2,57 +2,129 @@ package OOP_Concepts_remembered;
 
 public abstract class Employee implements Workable
 {
-    private String name;
-    private int age;
-    private String departament;
-    private double hourlyRate;
+    /**
+ * The name of the employee.
+ */
+private String name;
 
+/**
+ * The age of the employee.
+ */
+private int age;
 
-    public Employee(String name, int age, String departament, double hourlyRate)
-    {
-        this.name = name;
-        this.age = age;
-        this.departament = departament;
-        this.hourlyRate = hourlyRate;
-    }
+/**
+ * The department of the employee.
+ */
+private String departament;
 
-    public String getName() {
-        return name;
-    }
+/**
+ * The hourly rate of the employee.
+ */
+private double hourlyRate;
 
-    public void setName(String name) {
-        this.name = name;
-    }
+/**
+ * Constructs a new Employee object with the given name, age, department, and hourly rate.
+ *
+ * @param name The name of the employee.
+ * @param age The age of the employee.
+ * @param departament The department of the employee.
+ * @param hourlyRate The hourly rate of the employee.
+ */
+public Employee(String name, int age, String departament, double hourlyRate)
+{
+    this.name = name;
+    this.age = age;
+    this.departament = departament;
+    this.hourlyRate = hourlyRate;
+}
 
-    public int getAge() {
-        return age;
-    }
+/**
+ * Returns the name of the employee.
+ *
+ * @return The name of the employee.
+ */
+public String getName() {
+    return name;
+}
 
-    public void setAge(int age) {
-        this.age = age;
-    }
+/**
+ * Sets the name of the employee.
+ *
+ * @param name The new name of the employee.
+ */
+public void setName(String name) {
+    this.name = name;
+}
 
-    public String getDepartament() {
-        return departament;
-    }
+/**
+ * Returns the age of the employee.
+ *
+ * @return The age of the employee.
+ */
+public int getAge() {
+    return age;
+}
 
-    public void setDepartament(String departament) {
-        this.departament = departament;
-    }
+/**
+ * Sets the age of the employee.
+ *
+ * @param age The new age of the employee.
+ */
+public void setAge(int age) {
+    this.age = age;
+}
 
-    public double getHourlyRate() {
-        return hourlyRate;
-    }
+/**
+ * Returns the department of the employee.
+ *
+ * @return The department of the employee.
+ */
+public String getDepartament() {
+    return departament;
+}
 
-    public void setHourlyRate(double salary) {
-        this.hourlyRate = salary;
-    }
+/**
+ * Sets the department of the employee.
+ *
+ * @param departament The new department of the employee.
+ */
+public void setDepartament(String departament) {
+    this.departament = departament;
+}
 
-    public abstract int calculateSalary();
+/**
+ * Returns the hourly rate of the employee.
+ *
+ * @return The hourly rate of the employee.
+ */
+public double getHourlyRate() {
+    return hourlyRate;
+}
 
-    @Override
-    public void work()
-    {
-        System.out.println("I am working");
-    }
+/**
+ * Sets the hourly rate of the employee.
+ *
+ * @param salary The new hourly rate of the employee.
+ */
+public void setHourlyRate(double salary) {
+    this.hourlyRate = salary;
+}
+
+/**
+ * Abstract method to calculate the salary of the employee.
+ * This method must be implemented by any class that extends Employee.
+ *
+ * @return The salary of the employee.
+ */
+public abstract int calculateSalary();
+
+/**
+ * Method to simulate the employee working.
+ * Prints "I am working" to the console.
+ */
+@Override
+public void work()
+{
+    System.out.println("I am working");
+}
 }
