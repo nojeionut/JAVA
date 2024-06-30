@@ -1,8 +1,13 @@
 package Functional_Programming.Functional_interface;
 
+import java.util.*;
+import java.util.function.Function;
+
 public class Main
 {
     public static void main(String[] args) {
+
+        List<String> fruites = Arrays.asList("Apple", "aanana", "Orange", "Grapes", "Pineapple", "Mango", "Papaya", "Guava", "Watermelon", "Kiwi");
 
        // Print the string "Functional interface" to the console
 System.out.println("// Functional interface");
@@ -19,5 +24,12 @@ System.out.println("Normal function call: " + Functions.incrementByOne(0));
 // The result of the operation is printed to the console
 System.out.println("Functional interface call: " + Functions.incrementByOneFunction.apply(0));
 
+
+// Call the method countFruitsStartingWithA from the Functions class
+// This method takes a list of strings(fruits) as input and returns the number of fruits that start with the letter 'A'
+        System.out.println("Number of fruits starting with 'A': " + Functions.countFruitsStartingWithA.apply(fruites));
+
     }
+
+
 }

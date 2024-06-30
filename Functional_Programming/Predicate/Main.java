@@ -1,5 +1,6 @@
 package Functional_Programming.Predicate;
 
+import java.util.List;
 import java.util.function.*;
 
 public class Main
@@ -14,6 +15,8 @@ public class Main
 
         // Predicate interface
         // Predicate<T> p = (T t) -> { return true/false; };
+
+        List<String> fruites = List.of("Apple", "Banana", "Orange", "Grapes", "Pineapple", "Mango", "Watermelon", "Strawberry");
 
         String phonenumber = "0223946569";
 
@@ -38,6 +41,10 @@ public class Main
         System.out.println(checkPhoneNumberPredicate.or(checkForNumber2).and(countNumber5).test(phonenumber));
         // this predicate tests if the phone number starts with 07, contains 2 and has 3 5's in it.
 
+
+        System.out.println("Predicate with allMatch() method to check if all fruites start with A");
+        System.out.println(checkFruitInitial.test(fruites));
+
     }
 
     static boolean checkPhoneNumber(String phonenumber)
@@ -51,4 +58,8 @@ public class Main
     static Predicate<String> checkForNumber2 = phonenumber -> phonenumber.contains("2");
 
     static Predicate<String> countNumber5 = phonenumber -> phonenumber.chars().filter(ch -> ch == '5').count() == 3;
+
+    static Predicate<List<String>> checkFruitInitial = fruites
+            -> fruites.stream().anyMatch(fruite
+            -> fruite.startsWith("A"));
 }

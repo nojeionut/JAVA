@@ -1,5 +1,6 @@
 package Functional_Programming.Functional_interface;
 
+import java.util.*;
 import java.util.function.Function;
 
 /**
@@ -25,4 +26,7 @@ public class Functions
     {
         return number + 1;
     }
+
+    // Function that takes a list of strings(fruits) as input and return the number of fruits that start with the letter 'A'
+    public static Function<List<String>, Long> countFruitsStartingWithA = fruites -> fruites.stream().filter(fruit -> fruit.startsWith("A") || fruit.startsWith("a")).count();
 }
